@@ -1,0 +1,14 @@
+<h1>Recipes</h1>
+<p>Find me in app/views/recipes/index.html.erb</p>
+
+<% @recipes.each do |recipe| %>
+  <ul>
+      <li><%= link_to(recipe.title, recipe_path(recipe.id)) %></li>
+      <li><%= link_to("Edit", recipe_path(recipe.id))%> </li>
+      <li><%= link_to("Delete", recipe_path(recipe.id), :method => :delete) %> </li>
+  </ul>
+  <% end %>
+
+  <p>
+    <%= link_to "New Recipe", new_recipe_path %>
+  </p>
